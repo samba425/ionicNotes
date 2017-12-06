@@ -3,7 +3,29 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+angular.module('noteApp', ['ionic'])
+
+.config(function($stateProvider,$urlRouterProvider) {
+  $stateProvider.state('view',{
+    url:'/view',
+    templateUrl:'/templates/view.html',
+    controller: 'viewController as viewControllerScope'
+  })
+  .state('edit',{
+    url:'/edit/:id',
+    templateUrl:'/templates/edit.html',
+    controller: 'editController as editControllerScope'
+
+  })
+  .state('add',{
+    url:'/add',
+    templateUrl:'/templates/add.html',
+    controller: 'editController as editControllerScope'
+
+  })
+
+  $urlRouterProvider.otherwise('/view');
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

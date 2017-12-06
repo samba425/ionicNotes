@@ -1,0 +1,13 @@
+<ion-view view-title="Edit Note">
+<ion-content> 
+<div class="list card">
+	<div class="item">
+		<input type="text" placeholder="title" ng-model="editControllerScope.editview.name" required>
+	</div>
+	<div class="item">
+		<textarea type="text" placeholder="description" ng-model="editControllerScope.editview.details" required></textarea>
+	</div>
+	<button class="button button-calm button-block" ng-click="editControllerScope.addNote(editControllerScope.editview)">Add Note</button>
+</div> 
+</ion-content>
+</ion-view>
